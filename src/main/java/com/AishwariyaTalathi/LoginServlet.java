@@ -13,17 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet {
 	 protected void doGet(HttpServletRequest request,HttpServletResponse response) 
 			 throws ServletException, IOException {
-		 PrintWriter writer = response.getWriter();
-		 writer.println("<html>");
-		 writer.println("<head>");
-		 writer.println("<title>MyPage</title>");
-		 writer.println("</head>");
-		 writer.println("<body>");
-		 writer.println("<h1>Welcome to My Page!</h1>");
-		 writer.println("<h3>Hi, This is Aishwariya Talathi</h3>");
-		 writer.println("<p>Have a great Day!</p>");
-		 writer.println("</body>");
-		 writer.println("</html>"); 		 
+		//Redirecting request from this servlet to JSP by giving 
+		// The path of the JSP file in the requestdispatcher
+		 request.getRequestDispatcher("/WEB-INF/Views/login.jsp").forward(request, response);
 	}
 	  
 }
